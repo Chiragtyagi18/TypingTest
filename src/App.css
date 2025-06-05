@@ -1,0 +1,218 @@
+:root {
+  --primary-color: #4a90e2;
+  --accent-color: #f5a623;
+  --bg-color: #f0f4f8;
+  --text-color: #222;
+  --correct-color: #28a745;
+  --incorrect-color: #dc3545;
+  --neutral-color: #adb5bd;
+  --button-bg: #4a90e2;
+  --button-hover: #3f7ecb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: background 0.4s ease;
+}
+
+.container {
+  background: white;
+  padding: 2.5rem 2rem;
+  max-width: 700px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgb(0 0 0 / 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 14px 48px rgb(0 0 0 / 0.18);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+  font-size: 2.75rem;
+  color: var(--primary-color);
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+#test-text {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  border: 1.5px solid var(--neutral-color);
+  padding: 1.2rem 1.4rem;
+  border-radius: 10px;
+  margin-bottom: 1.8rem;
+  user-select: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 140px;
+  background: #fffefe;
+  box-shadow: inset 0 0 10px rgb(0 0 0 / 0.03);
+  transition: border-color 0.3s ease;
+}
+
+#test-text .correct {
+  color: var(--correct-color);
+  font-weight: 600;
+}
+
+#test-text .incorrect {
+  color: var(--incorrect-color);
+  text-decoration: underline wavy;
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  font-size: 1.15rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: 2px solid var(--neutral-color);
+  resize: none;
+  outline-offset: 3px;
+  outline-color: var(--primary-color);
+  margin-bottom: 1.8rem;
+  transition: border-color 0.3s ease;
+  box-shadow: inset 0 0 7px rgb(0 0 0 / 0.07);
+  font-family: monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+}
+
+textarea:disabled {
+  background: #fefefe;
+  cursor: not-allowed;
+  color: #555;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.settings {
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  justify-content: center;
+  user-select: none;
+}
+
+select {
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: 1.8px solid var(--neutral-color);
+  font-size: 1.1rem;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+  min-width: 140px;
+  font-weight: 600;
+  color: var(--text-color);
+  background: white;
+}
+
+select:focus {
+  border-color: var(--primary-color);
+}
+
+button {
+  padding: 0.85rem 2.2rem;
+  background: var(--button-bg);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.35s ease;
+  user-select: none;
+  box-shadow: 0 4px 10px rgb(74 144 226 / 0.6);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+button:hover:not(:disabled) {
+  background: var(--button-hover);
+  box-shadow: 0 6px 15px rgb(245 166 35 / 0.9);
+}
+
+button:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Colors for levels */
+.level-beginner {
+  --button-bg: #28a745;
+  --button-hover: #218838;
+  --primary-color: #155724;
+  background: #e6f5ea;
+}
+.level-medium {
+  --button-bg: #f5a623;
+  --button-hover: #d48806;
+  --primary-color: #874d00;
+  background: #fff7e6;
+}
+.level-expert {
+  --button-bg: #dc3545;
+  --button-hover: #a71d2a;
+  --primary-color: #6f1d24;
+  background: #fbe9ea;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.25rem 1rem;
+  }
+  #test-text {
+    font-size: 1rem;
+    min-height: 120px;
+  }
+  textarea {
+    font-size: 1rem;
+    min-height: 80px;
+  }
+  .stats {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .settings {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  button {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+}
